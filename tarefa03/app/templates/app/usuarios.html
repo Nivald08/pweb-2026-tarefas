@@ -7,8 +7,9 @@
 </head>
 <body>
     {% for usuario in usuarios %}
-    <p>Nome: {{ usuario.nome }}</p>
-    <p>Idade: {{usuario.idade }}</p>
+    <p><ul><li>Nome: {{ usuario.Nome }}</li></ul></p>
+    <p>Idade: {{ usuario.Idade }}</p>
+    <p>Matricula: {{ usuario.Matricula }}</p>
     {% endfor %}
 </body>
 </html>

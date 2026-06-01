@@ -15,6 +15,6 @@ def usuarios(request):
     ]
 
     context = {
-        "/usuarios": lista_usuario,
+        "usuarios": lista_usuario,
     }
     return render(request, "app/usuarios.html", context)
