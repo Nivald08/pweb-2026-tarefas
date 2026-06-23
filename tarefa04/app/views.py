@@ -4,7 +4,7 @@ from datetime import date
 
 
 def index(request):
-    return render(request, "app/index.html")
+    return render(request, "index.html")
 
 def usuarios(request):
 
@@ -12,4 +12,4 @@ def usuarios(request):
         "hoje": date.today(),
 
     }
-    return render(request, "app/usuarios.html", context)
+    return render(request, "usuarios.html", context)
