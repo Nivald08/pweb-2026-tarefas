@@ -6,10 +6,18 @@
     <title>Tarefa 04</title>
 </head>
 <body>
-    {% for usuario in usuarios %}
-    <p><ul><li>Nome: {{ usuario.Nome }}</li></ul></p>
-    <p>Status: {{ usuario.Status }}</p>
-    <p>Prazo: {{ usuario.Prazo }}</p>
+    
+    {% for licao in licoes %}
+   <p><strong>Nome:</strong> {{ licao.Nome }}</p>
+        <p><strong>Status:</strong> {{ licao.Status }}</p>
+        
+        <p><strong>Prazo:</strong> 
+            {{ licao.Prazo }}
+            
+            {% if licao.Prazo < hoje and licao.Status != 'concluída' %}
+                <span style="color: red;"> Atrasado!</span>
+    {% endif %}
+  </p>
     {% endfor %}
 </body>
 </html>
