@@ -1,11 +1,17 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Blog</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Postagens</h2>
+
+<ul>
+    {% for post in Posts %}
+    <li>
+        <h3>{{ post.titulo }}</h3>
+        <p>{{ post.data_publicacao }}</p>
+        <a href="{% url 'post' post.id %}">Ver postagem</a>
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock %}

@@ -1,3 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from .models import Post
+
+def index(request):
+    Posts = Post.objects.all().order_by('-data_publicacao')
+    return render(request, 'index.html', {'Posts': Posts})
+
+def post(request, id):
+    postagem = get_object_or_404(Post, id=id)
+    return render(request, 'post.html', {'post': postagem})
 
 # Create your views here.
