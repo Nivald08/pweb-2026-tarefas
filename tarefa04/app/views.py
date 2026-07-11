@@ -1,16 +1,15 @@
 from django.shortcuts import render
-from app.models import Tarefas
+from .models import Tarefa
 from datetime import date
 
-
 def index(request):
-    return render(request, "index.html")
-
-def usuarios(request):
+    tarefas = Tarefa.objects.all()
 
     context = {
-        "hoje": date.today(),
-        "licoes": Tarefas.object.all()
-
+        'tarefas': tarefas,
+        'hoje': date.today()
     }
-    return render(request, "usuarios.html", context)
+
+    return render(request, 'index.html', context)
+
+# Create your views here.

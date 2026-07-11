@@ -1,14 +1,9 @@
 from django.db import models
 
-class Tarefas(models.Model):
-    nome = models.CharField(max_length=30)
-    status = models.BooleanField()
+class Tarefa(models.Model):
+    nome = models.CharField(max_length=100)
+    status = models.CharField(max_length=50)
     prazo = models.DateField()
 
-class Meta:
-        verbose_name = "Tarefa"
-        verbose_name_plural = "Tarefas"
-
-def __str__(self):
+    def __str__(self):
         return self.nome
-        

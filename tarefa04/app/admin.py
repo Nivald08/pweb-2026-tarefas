@@ -1,6 +1,6 @@
 from django.contrib import admin
+from .models import Tarefa
 
-from app.models import Tarefas
+admin.site.register(Tarefa)
 
-admin.site.register(Tarefas)
-
+# Register your models here.

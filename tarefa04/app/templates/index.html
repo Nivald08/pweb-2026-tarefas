@@ -6,6 +6,24 @@
     <title>Tarefa 04</title>
 </head>
 <body>
-    <a href="./usuarios.html">usuarios</a>
+    <h1>Lista de Tarefas</h1>
+
+    {% for tarefa in tarefas %}
+     
+      {% if tarefa.prazo < hoje %}
+        <p style="color: red;">
+            {{ tarefa.nome }} - 
+            {{ tarefa.status }} - 
+            {{ tarefa.prazo }}
+            (Atrasada)
+        </p>
+      {% else %}
+        <p>
+            {{ tarefa.nome }} - 
+            {{ tarefa.status }} - 
+            {{ tarefa.prazo }}
+        </p>
+      {% endif %}
+    {% endfor %}
 </body>
 </html>
